@@ -1,7 +1,7 @@
 # Physical-simulations
 This project consists of storing codes simulating physical experiments.
 
-## 1 <a href = 'https://github.com/celso05/Physical-simulations/blob/main/Campo_eletrico.ipynb'> Campo Elétrico </a>
+## <a href = 'https://github.com/celso05/Physical-simulations/blob/main/Campo_eletrico.ipynb'> 1 - Campo Elétrico </a>
 ### Descrição Teórica do Código
 
 Este código Python visa a visualização do campo elétrico gerado por duas cargas pontuais em um plano bidimensional. Ele utiliza a biblioteca `numpy` para cálculos numéricos e `matplotlib` para a visualização gráfica.
