@@ -54,3 +54,7 @@ O código permite ajustar as magnitudes das cargas $\( Q_1 \)$ e $\( Q_2 \)$, po
 - A visualização gráfica é inspirada em métodos comuns de representação de campos vetoriais em física.
 
 Este código é uma ferramenta didática útil para compreender a interação entre campos elétricos gerados por duas cargas.
+
+Exemplo:
+
+![1723759966270190](https://github.com/user-attachments/assets/98d2362c-a591-4ce0-ac0a-11e923ed5c52)
