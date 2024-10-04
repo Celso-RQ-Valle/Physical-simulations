@@ -58,3 +58,53 @@ Este código é uma ferramenta didática útil para compreender a interação en
 Exemplo:
 
 ![1723759966270190](https://github.com/user-attachments/assets/98d2362c-a591-4ce0-ac0a-11e923ed5c52)
+
+## <a href = 'https://github.com/Celso-RQ-Valle/Physical-simulations/blob/main/Git%20Monte%20Carlo.ipynb'> 2 - Simulação por Monte Carlo </a>
+### Descrição Teórica do Código
+
+Este código Python utiliza o método de Monte Carlo para realizar três simulações distintas: a integral de \( \sin(x) \), a estimativa de \( \pi \), e a simulação de tendenciosidade de um estimador de média. Ele faz uso da biblioteca `numpy` para os cálculos numéricos e `matplotlib` para a visualização gráfica.
+
+#### 1. Fundamentos Teóricos
+
+O método de Monte Carlo baseia-se na geração de números aleatórios para estimar valores de interesse. Em vez de usar uma abordagem determinística, ele simula processos aleatórios e faz inferências a partir das médias de resultados obtidos em diversas iterações.
+
+#### 2. Cálculo da Integral de $\sin(x)$
+
+A primeira parte do código realiza a integração de $\sin(x)$ no intervalo $[0, \pi]$ usando o método de Monte Carlo. A integral é estimada pela seguinte fórmula:
+
+$$
+\int_0^{\pi} \sin(x) dx = 2
+$$
+
+Aqui, um grande número de pontos aleatórios é gerado dentro do intervalo $[0, \pi]$ e a função $\sin(x)$ é avaliada nesses pontos. A estimativa da integral é obtida ao calcular a média das avaliações multiplicada pelo comprimento do intervalo.
+
+#### 3. Estimativa de $\pi$
+
+Na segunda parte, o código utiliza Monte Carlo para estimar o valor de $\pi$. Um círculo de raio 1 é inscrito em um quadrado, e pontos aleatórios são gerados dentro do quadrado. A razão entre o número de pontos que caem dentro do círculo e o número total de pontos gerados é usada para estimar $\pi$, com base na fórmula:
+
+$$
+\pi \approx 4 \times \frac{\text{número de pontos no círculo}}{\text{número total de pontos}}
+$$
+
+#### 4. Simulação de Tendenciosidade de Estimador
+
+Na terceira parte, o código simula a tendenciosidade de um estimador de média. A cada iteração, 10 valores são gerados a partir de uma distribuição normal com valor médio real $x = 20$. Em seguida, é calculada a média dos valores após a remoção de possíveis valores extremos (via a função `removeMm`). A simulação é repetida 50.000 vezes para calcular a tendenciosidade, ou seja, a diferença entre a média estimada e o valor real $x$ .
+
+As seguintes estatísticas são obtidas:
+- **sx**: Desvio padrão das médias estimadas.
+- **tend**: Tendenciosidade, ou a diferença entre a média estimada e o valor verdadeiro.
+- **stend**: O erro padrão da tendenciosidade.
+
+#### 5. Visualização
+
+O código também oferece uma visualização gráfica dos resultados da integral de $\sin(x)$ e da estimativa de $\pi$, plotando gráficos que mostram a evolução das estimativas à medida que o número de iterações aumenta.
+
+#### Referências
+
+O método de Monte Carlo é amplamente utilizado em física, estatística e finanças para resolver problemas de integração e estimativa que seriam difíceis de calcular de forma determinística.
+
+Exemplo:
+
+![int sen](https://github.com/user-attachments/assets/0afc59dc-7b77-438c-a785-42c996281da8)
+![pi mon](https://github.com/user-attachments/assets/932d13ad-fb84-4eba-b234-c9bde80d3801)
+
