@@ -108,3 +108,67 @@ Exemplo:
 ![int sen](https://github.com/user-attachments/assets/0afc59dc-7b77-438c-a785-42c996281da8)
 ![pi mon](https://github.com/user-attachments/assets/932d13ad-fb84-4eba-b234-c9bde80d3801)
 
+## <a href='https://github.com/Celso-RQ-Valle/Physical-simulations/blob/main/Simula%C3%A7%C3%A3o_de_Pendulo_Duplo.ipynb'> 3 - Simulação de Pêndulo Duplo </a>
+### Descrição Teórica do Código
+
+Este código Python simula o movimento de um pêndulo duplo, um sistema clássico de dinâmica não-linear que demonstra comportamento caótico em certas condições. A simulação é feita utilizando o método de Runge-Kutta de segunda ordem (RK2) para a integração numérica das equações diferenciais do sistema. As bibliotecas `numpy` e `matplotlib` são utilizadas para os cálculos numéricos e para a visualização gráfica, respectivamente, permitindo uma análise detalhada do comportamento do sistema ao longo do tempo.
+
+#### 1. Fundamentos Teóricos
+
+O pêndulo duplo consiste em dois pêndulos acoplados de maneira sequencial, com o segundo pêndulo suspenso na extremidade do primeiro. Cada movimento individual afeta diretamente o outro, resultando em um sistema altamente sensível às condições iniciais. Tal sensibilidade é uma característica típica de sistemas caóticos.
+
+![images](https://github.com/user-attachments/assets/1174474a-f7cc-4844-b2cc-018542c9d0ba)
+
+
+As equações do movimento são derivadas a partir das leis de conservação de energia e do momento angular, mas devido à sua natureza não-linear, sua solução analítica é inviável. Por isso, opta-se por uma abordagem numérica para a solução, utilizando o método de Runge-Kutta para resolver as equações diferenciais ordinárias.
+
+#### 2. Simulação do Pêndulo Duplo
+
+Inicialmente, o código define os parâmetros físicos do sistema: as massas dos corpos ($m_1$, $m_2$), os comprimentos dos fios ($l_1$, $l_2$), e as condições iniciais para os ângulos ($\theta_1$, $\theta_2$) e os momentos conjugados ($p_1$, $p_2$). O método de Runge-Kutta é utilizado para integrar as equações do movimento no tempo e determinar a evolução tanto dos ângulos quanto das energias cinética e potencial do sistema.
+
+No início da simulação, é feita a suposição de que a massa do primeiro corpo ($m_1$) é significativamente maior que a do segundo ($m_2$), ou seja, $m_1 \gg m_2$. Essa consideração inicial simplifica o comportamento do sistema e resulta em um movimento mais previsível para o corpo menor, uma vez que as forças geradas pelo segundo corpo têm pouca influência no movimento do primeiro.
+
+As equações diferenciais que descrevem o sistema, com base na energia e no momento angular, são expressas da seguinte forma:
+
+$$
+\dot{\theta}_1 = \frac{l_2 p_1 - l_1 p_2 \cos(\theta_1 - \theta_2)}{(l_2 l_1^2) (m_1 + m_2 \sin^2(\theta_1 - \theta_2))}
+$$
+
+$$
+\dot{p}_1 = -(m_1 + m_2) g l_1 \sin(\theta_1) - A + B
+$$
+
+Os termos $A$ e $B$ representam contribuições das interações entre os momentos conjugados e os ângulos, sendo recalculados a cada iteração do processo de integração.
+
+#### 3. Comparação de Casos: $m_1 \gg m_2$ e $m_1 \sim m_2$
+
+Após as simulações iniciais com a consideração de que $m_1$ é muito maior que $m_2$, o código também explora o cenário onde as massas dos corpos são comparáveis ($m_1 \sim m_2$). Essa transição ilustra como a dinâmica do sistema se altera à medida que as influências mútuas entre os dois corpos se tornam mais pronunciadas.
+
+Quando $m_1 \gg m_2$, o movimento do primeiro pêndulo domina o sistema, e o segundo pêndulo se move essencialmente como uma extensão passiva, com perturbações muito pequenas no comportamento global do sistema. Nesse cenário, o movimento é menos caótico e mais previsível, pois o corpo menor não exerce uma força significativa sobre o corpo maior.
+
+No entanto, quando $m_1$ é comparável a $m_2$, o sistema exibe um comportamento muito mais caótico e complexo. Nessa configuração, ambos os corpos influenciam fortemente o movimento um do outro, e pequenas variações nas condições iniciais podem resultar em grandes divergências nos resultados da simulação. O movimento passa a ser extremamente sensível a perturbações, e o sistema evolui para um regime caótico muito mais evidente.
+
+#### 4. Visualização
+
+A simulação gera diversos gráficos que ajudam a entender o comportamento do sistema. Inicialmente, são gerados gráficos com a suposição de que $m_1 \gg m_2$, permitindo observar o movimento mais suave e previsível. Em seguida, gráficos adicionais são produzidos para o caso em que $m_1 \sim m_2$, ilustrando o aumento na complexidade do sistema e o comportamento caótico emergente.
+
+Esses gráficos incluem:
+
+- A trajetória dos ângulos $\theta_1$ e $\theta_2$ ao longo do tempo;
+- O espaço de fase do sistema (representação gráfica da relação entre ângulos e velocidades angulares);
+- A evolução das energias cinética e potencial dos dois corpos, demonstrando como a energia é trocada entre os pêndulos.
+
+Esses gráficos são gerados usando a biblioteca `matplotlib`, que permite uma visualização clara e detalhada do comportamento do sistema em diferentes condições.
+
+#### 5. Comportamento Caótico
+
+Uma característica marcante do pêndulo duplo, especialmente no caso em que $m_1 \sim m_2$, é o comportamento caótico. Pequenas diferenças nas condições iniciais podem resultar em trajetórias radicalmente diferentes para os ângulos e velocidades angulares. O código ilustra esse comportamento, permitindo simular o sistema em diferentes configurações iniciais e observar como o comportamento se altera de forma imprevisível.
+
+#### Referências
+
+O estudo de sistemas dinâmicos não-lineares, como o pêndulo duplo, é fundamental para a compreensão de fenômenos caóticos em várias áreas da física e matemática. Este exemplo destaca como sistemas aparentemente simples podem gerar dinâmicas extremamente complexas e imprevisíveis.
+
+Exemplo:
+
+![pos2](https://github.com/user-attachments/assets/c359cb7a-a72b-4149-bc43-d0b08a4fa5bd)
+
