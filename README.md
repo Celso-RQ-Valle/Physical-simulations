@@ -172,3 +172,50 @@ Exemplo:
 
 ![pos2](https://github.com/user-attachments/assets/c359cb7a-a72b-4149-bc43-d0b08a4fa5bd)
 
+
+## <a href='https://github.com/Celso-RQ-Valle/Physical-simulations/blob/main/Pontos_de_Lagrange.ipynb'> 4 - Simulação dos Pontos de Lagrange </a>
+
+### Descrição Teórica do Código
+
+Este código Python calcula e visualiza os **Pontos de Lagrange** em um sistema gravitacional composto por duas massas, \( M_1 \) e \( M_2 \). Os Pontos de Lagrange são soluções particulares onde as forças gravitacionais e centrípetas se equilibram, permitindo que um corpo menor (de massa desprezível) permaneça estático em relação a \( M_1 \) e \( M_2 \). A simulação utiliza as bibliotecas `sympy` para resolver as equações matemáticas e `matplotlib` para gerar gráficos das curvas de nível e dos Pontos de Lagrange.
+
+#### 1. Fundamentos Teóricos
+
+Em um sistema com duas massas, como no caso de dois corpos celestes, há cinco pontos de equilíbrio estático conhecidos como **Pontos de Lagrange** (L1, L2, L3, L4, L5). Nestes pontos, a força gravitacional exercida pelos dois corpos, juntamente com a força centrífuga do sistema em rotação, se equilibram.
+
+Esses pontos são particularmente importantes em astrofísica e engenharia espacial, pois satélites ou sondas podem ser posicionados nestes locais com estabilidade relativa.
+
+#### 2. Cálculo dos Pontos de Lagrange
+
+O código começa definindo as variáveis simbólicas necessárias e, em seguida, monta a equação do potencial efetivo que leva em consideração a interação gravitacional entre as massas e o termo centrífugo. A função potencial total \( V \) é definida como:
+
+$$
+V = -\frac{GM_1}{\sqrt{(x - x_1)^2 + y^2}} - \frac{GM_2}{\sqrt{(x - x_2)^2 + y^2}} - \frac{1}{2} \omega^2 r^2
+$$
+
+Onde:
+- \( G \) é a constante gravitacional,
+- \( M_1 \) e \( M_2 \) são as massas,
+- \( x_1 \) e \( x_2 \) são as posições das massas,
+- \( \omega \) é a frequência angular do sistema.
+
+Os Pontos de Lagrange são obtidos resolvendo-se o gradiente do potencial \( V \), ou seja, os pontos onde as forças se equilibram. O código utiliza chutes iniciais para a resolução numérica das equações diferenciais e armazena os valores de \( x \) e \( y \) para os pontos de Lagrange.
+
+#### 3. Visualização das Curvas de Nível
+
+Após calcular os Pontos de Lagrange, o código gera gráficos que mostram as curvas de nível do potencial gravitacional. As curvas de nível são linhas que representam regiões de igual potencial, e os Pontos de Lagrange são sobrepostos no gráfico. O gráfico também mostra as posições de \( M_1 \) e \( M_2 \) para fornecer uma visão clara da configuração do sistema.
+
+#### 4. Diferenças entre os Pontos de Lagrange
+
+- **L1, L2, L3**: Estão localizados ao longo da linha que conecta \( M_1 \) e \( M_2 \). Esses pontos são instáveis, o que significa que pequenos desvios podem levar o objeto a se afastar do ponto de equilíbrio.
+- **L4, L5**: Localizados nos vértices de triângulos equiláteros formados com as duas massas. Esses pontos são estáveis, o que os torna adequados para a colocação de satélites de longo prazo.
+
+#### Referências
+
+Os Pontos de Lagrange são amplamente utilizados em astrodinâmica e missões espaciais para posicionamento de satélites em regiões de equilíbrio gravitacional.
+
+Exemplo de gráfico:
+
+![Lagrange](https://github.com/user-attachments/assets/798cbe12-64a7-4c63-9a30-553bd55664fb)
+
+
