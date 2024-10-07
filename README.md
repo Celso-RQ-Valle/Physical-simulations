@@ -59,7 +59,7 @@ Exemplo:
 
 ![1723759966270190](https://github.com/user-attachments/assets/98d2362c-a591-4ce0-ac0a-11e923ed5c52)
 
-## <a href = 'https://github.com/Celso-RQ-Valle/Physical-simulations/blob/main/Git%20Monte%20Carlo.ipynb'> 2 - Simulação por Monte Carlo </a>
+## <a href='https://github.com/Celso-RQ-Valle/Physical-simulations/blob/main/Git%20Monte%20Carlo.ipynb'> 2 - Simulação por Monte Carlo </a>
 ### Descrição Teórica do Código
 
 Este código Python utiliza o método de Monte Carlo para realizar três simulações distintas: a integral de \( \sin(x) \), a estimativa de \( \pi \), e a simulação de tendenciosidade de um estimador de média. Ele faz uso da biblioteca `numpy` para os cálculos numéricos e `matplotlib` para a visualização gráfica.
@@ -88,12 +88,15 @@ $$
 
 #### 4. Simulação de Tendenciosidade de Estimador
 
-Na terceira parte, o código simula a tendenciosidade de um estimador de média. A cada iteração, 10 valores são gerados a partir de uma distribuição normal com valor médio real $x = 20$. Em seguida, é calculada a média dos valores após a remoção de possíveis valores extremos (via a função `removeMm`). A simulação é repetida 50.000 vezes para calcular a tendenciosidade, ou seja, a diferença entre a média estimada e o valor real $x$ .
+Na terceira parte, a simulação de Monte Carlo é utilizada para analisar a tendenciosidade de um estimador de média. O código gera um conjunto de \( N \) tempos de vida a partir de uma distribuição exponencial com uma constante de meia-vida verdadeira. Em seguida, são estimadas as constantes \( \tau \) e \( \lambda \) para diferentes tamanhos de amostra, e a tendenciosidade é calculada como a diferença relativa entre as médias estimadas e os valores verdadeiros.
 
-As seguintes estatísticas são obtidas:
-- **sx**: Desvio padrão das médias estimadas.
-- **tend**: Tendenciosidade, ou a diferença entre a média estimada e o valor verdadeiro.
-- **stend**: O erro padrão da tendenciosidade.
+A metodologia implementada inclui:
+
+1. **Geração de Dados**: Tempos de vida gerados com base na constante de meia-vida verdadeira.
+2. **Estimativas**: Cálculo das estimativas de \( \tau \) e \( \lambda \) a partir dos dados gerados.
+3. **Análise Estatística**: Cálculo da tendenciosidade e variância das estimativas.
+
+Os gráficos resultantes mostram como a tendenciosidade e a variância se comportam em relação ao tamanho da amostra, fornecendo insights sobre a precisão das estimativas.
 
 #### 5. Visualização
 
@@ -107,6 +110,8 @@ Exemplo:
 
 ![int sen](https://github.com/user-attachments/assets/0afc59dc-7b77-438c-a785-42c996281da8)
 ![pi mon](https://github.com/user-attachments/assets/932d13ad-fb84-4eba-b234-c9bde80d3801)
+![tendenciosidade](https://github.com/user-attachments/assets/1254d9e5-69f7-4e84-9efc-31080ceb9f1c)
+
 
 ## <a href='https://github.com/Celso-RQ-Valle/Physical-simulations/blob/main/Simula%C3%A7%C3%A3o_de_Pendulo_Duplo.ipynb'> 3 - Simulação de Pêndulo Duplo </a>
 ### Descrição Teórica do Código
@@ -194,12 +199,12 @@ V = -\frac{GM_1}{\sqrt{(x - x_1)^2 + y^2}} - \frac{GM_2}{\sqrt{(x - x_2)^2 + y^2
 $$
 
 Onde:
-- \( G \) é a constante gravitacional,
-- \( M_1 \) e \( M_2 \) são as massas,
-- \( x_1 \) e \( x_2 \) são as posições das massas,
-- \( \omega \) é a frequência angular do sistema.
+- $G$ é a constante gravitacional,
+- $M_1$ e $M_2$ são as massas,
+- $x_1$ e $x_2$ são as posições das massas,
+- $\omega$ é a frequência angular do sistema.
 
-Os Pontos de Lagrange são obtidos resolvendo-se o gradiente do potencial \( V \), ou seja, os pontos onde as forças se equilibram. O código utiliza chutes iniciais para a resolução numérica das equações diferenciais e armazena os valores de \( x \) e \( y \) para os pontos de Lagrange.
+Os Pontos de Lagrange são obtidos resolvendo-se o gradiente do potencial $V$, ou seja, os pontos onde as forças se equilibram. O código utiliza chutes iniciais para a resolução numérica das equações diferenciais e armazena os valores de $x$ e $y$ para os pontos de Lagrange.
 
 #### 3. Visualização das Curvas de Nível
 
