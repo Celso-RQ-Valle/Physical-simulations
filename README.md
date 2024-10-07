@@ -223,4 +223,43 @@ Exemplo de gráfico:
 
 ![Lagrange](https://github.com/user-attachments/assets/798cbe12-64a7-4c63-9a30-553bd55664fb)
 
+## <a href='https://github.com/Celso-RQ-Valle/Physical-simulations/blob/main/statistical%20simulations.ipynb'> 5 - Simulações Estatísticas </a>
+
+### Descrição Teórica do Código
+
+Este código Python realiza uma série de simulações estatísticas, explorando conceitos fundamentais em estatística e probabilidade. As simulações são divididas em quatro partes principais: o experimento de Galton, random walkers, uma adaptação do random walker para comparação com o mercado de ações, e um random walker em 2D que plota um histograma em 3D da frequência de repetições.
+
+#### 1. Experimento de Galton
+
+A primeira parte do código simula o **Experimento de Galton**, que demonstra como a distribuição normal pode emergir a partir de um processo de eventos independentes. As bolinhas são lançadas através de um conjunto de pinos dispostos em um triângulo, resultando em uma distribuição que se aproxima de uma curva normal.
+
+examplo:
+
+![galton](https://github.com/user-attachments/assets/e75f85cf-a3cf-4951-b306-5960f78fd49a)
+
+#### 2. Random Walker
+
+A segunda parte implementa um **Random Walker**, onde uma partícula se move aleatoriamente em uma dimensão. A simulação permite observar como o comportamento aleatório de um único caminhar pode ser analisado ao longo do tempo, gerando trajetórias que refletem a natureza aleatória do movimento.
+
+exemplo:
+
+![random wal](https://github.com/user-attachments/assets/4867c540-908b-482b-99fb-16a2acc87180)
+
+#### 3. Adaptação do Random Walker
+
+Na terceira parte, o código adapta o random walker para realizar uma comparação com dados do mercado de ações, analisando como as flutuações de preço podem ser modeladas usando um processo estocástico. Isso ajuda a entender melhor as dinâmicas de preços em ambientes financeiros.
+
+exemplo:
+
+![b3_sim](https://github.com/user-attachments/assets/5aaccffe-e655-46e0-ad06-abb7658adb13)
+
+#### 4. Random Walker em 2D
+
+A quarta parte do código implementa um **Random Walker** em duas dimensões, gerando um gráfico 3D que exibe um histograma da frequência de repetições de diferentes posições alcançadas pela partícula.
+
+exemplo:
+
+![random 2D](https://github.com/user-attachments/assets/66b3e136-ce1a-428c-90bb-0a0de02be535)
+
+
 
